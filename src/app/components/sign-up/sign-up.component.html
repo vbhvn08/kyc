@@ -1,0 +1,61 @@
+<h3>Sign Up</h3>
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  <label for="first-name">First Name: </label>
+  <input
+    id="first-name"
+    type="text"
+    formControlName="firstName"
+    data-testid="first-name"
+  />
+  <div
+    *ngIf="
+      signUpForm.controls.firstName.invalid &&
+      (signUpForm.controls.firstName.dirty ||
+        signUpForm.controls.firstName.touched)
+    "
+    class="alert alert-danger"
+  >
+    <div
+      *ngIf="signUpForm.controls.firstName.errors?.['required']"
+      data-testid="first-name-error"
+    >
+      Name is required.
+    </div>
+  </div>
+
+  <label for="last-name">Last Name: </label>
+  <input
+    id="last-name"
+    type="text"
+    formControlName="lastName"
+    data-testid="last-name"
+  />
+
+  <label for="email">Email: </label>
+  <input id="email" type="text" formControlName="email" data-testid="email" />
+
+  <div
+    *ngIf="
+      signUpForm.controls.email.invalid &&
+      (signUpForm.controls.email.dirty || signUpForm.controls.email.touched)
+    "
+    class="alert alert-danger"
+  >
+    <div *ngIf="signUpForm.controls.email.errors?.['required']">
+      Email is required.
+    </div>
+    <div *ngIf="signUpForm.controls.email.errors?.['email']">
+      Invalid email.
+    </div>
+  </div>
+
+  <br />
+  <button
+    type="submit"
+    [disabled]="!signUpForm.valid"
+    data-testid="submit-button"
+  >
+    Submit
+  </button>
+  <br />
+</form>
