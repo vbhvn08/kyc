@@ -1,5 +1,10 @@
 # Kyc
 
+![CI](https://github.com/vbhvn08/kyc/actions/workflows/test.yml/badge.svg) [CI pipelines](https://github.com/vbhvn08/kyc/actions/workflows/test.yml)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2330b3e0-be2f-4e16-8a43-a7631162365f/deploy-status)](https://app.netlify.com/sites/startling-madeleine-881e3e/deploys)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
 
 ## Development server
